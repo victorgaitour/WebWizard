@@ -19,15 +19,17 @@ def home():
 def index():
    return render_template("index.html")
 
-@app.route("/stuff1", methods = ["POST","GET"])
-def stuff1():
-    return "stuff1"
-@app.route("/stuff2", methods = ["POST","GET"])
-def stuff2():
-    return "stuff2"
-@app.route("/stuff3", methods = ["POST","GET"])
-def stuff3():
-    return "stuff3"
+@app.route("/about", methods = ["POST","GET"])
+def about():
+    return render_template("about.html")
+
+@app.route("/services", methods = ["POST","GET"])
+def services():
+    return render_template("services.html")
+
+@app.route("/testimonials", methods = ["POST","GET"])
+def testimonials():
+    return render_template("testimonials.html")
 
 @app.route("/testbase")
 def testbase():
