@@ -1,61 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<link rel="stylesheet" href="/static/css/layouts/pricing.css">
 <br>
 <br>
+<body bgcolor="#d0d0d0">
 
-    
-    <div class="content">
-        <h2 class="content-head is-center">Don't make it hard on
-        yourself. Use the Website Wizard.</h2>
+<div class="content">
+        <h1 class="content-head is-center">Make it easy on
+  yourself. Use the Website Wizard.</h1>
 
         <div class="pure-g">
             <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form class="pure-form pure-form-stacked">
+                <form class="pure-form pure-form-stacked" method="POST">
                     <fieldset>
 
                         <label for="name">Your Name</label>
-                        <input id="name" type="text" name="name" placeholder="Your Name">
+                        <input id="name" name="name" type="text" placeholder="Your Name">
 
 
                         <label for="email">Your Email</label>
-                        <input id="email" type="email" name="email" placeholder="Your Email">
+                        <input id="email" name="email" type="email"
+	      placeholder="Your Email">
 
-
-                        <button type="submit" value="submit"
-                    formmethod="post" class="pure-button">Sign Up</button>
+	      <label for="message">Your Message</label>
+	      <textarea id="message" name="message" type="text" placeholder="Message" style=width:500px; height:250px;cols=40; 
+       rows=5;"></textarea>
+<br>
+                       
+                        <button type="submit" class="pure-button">Send
+                    Email</button>
                     </fieldset>
                 </form>
             </div>
 
             <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                <h4>Contact Us</h4>
-                <p class="thick">
-	      The Website Wizard <br>
-	      4400 Vestal Pkwy E
-	      <br>
-	      Phone : 917-885-7604
-	      <br>
-	      Email : victorgaitour@gmail.com
+                <h4>Contact Me</h4>
+                <p>
+	      4400 Vestal Pkwy E, Binghamton, NY 13902<br>
+	      <a href="mailto:victorgaitour@gmail.com">victorgaitour@gmail.com</a><br>
+	      <a href="tel:1-917-885-7604">1-917-885-7604</a>
 	      
-                
+                </p>
+
+                <h4>More Information</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
             </div>
-        </div>
-
-    </div>
-
-    <div class="footer l-box is-center">
-        View the source of this layout to learn more. Made with love by the YUI Team.
-    </div>
-
-</div>
-
-
-
-
-
-
+	    </div>
+	    <link rel="stylesheet" href="/static/standard.css">
+	     <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">--!>
+	    {% if notice == "Sending Failed. Please try again." %}
+ <div class="alert alert-danger " role="alert" style="text-align:center">
+   {{notice}}
+ </div>
+ {% endif %}
+{% if notice == "SUCCESS! I'll get back to you soon."%}
+ <div class="alert alert-success " role="alert" style="text-align:center">
+   {{notice}}
+ </div>
+ {% endif %} 
+<br>
 </body>
-</html>
 {% endblock %}

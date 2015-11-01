@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session
-
+from mail import maildude
 app = Flask('__name__')
 app.config['SECRET_KEY'] = "Alex is great"
 
@@ -38,15 +38,28 @@ def testbase():
 
 @app.route("/signup", methods = ["POST", "GET"])
 def signup():
-    name= ""
-    email=""
+    name= "."
+    email="."
+    message="."
     if request.method == "POST":
+        name= ""
+        email=""
+        message=""
         name = request.form["name"]
         email = request.form["email"]
-    print name
-    print email
+        message = request.form["message"]
+        if message=="" or email=="" or name=="":
+            return render_template("signup.html",notice="Sending Failed. Please try again.")
+        else:
+            if maildude(name,email,message) == True:
+                return render_template("signup.html",notice="SUCCESS! I'll get back to you soon.")
+            else:
+                return render_template("signup.html",notice="Sending Failed. Please try again.")
     return render_template("signup.html")
+
+
 
 if __name__=="__main__":
     app.debug = True
     app.run(port=8000)
+
