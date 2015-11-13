@@ -15,6 +15,10 @@ def home():
     print email
     return render_template("home.html")
 
+@app.route("/google8788b8b7e1df6b50.html", methods =["POST","GET"])
+def goog()
+    return render_template("google8788b8b7e1df6b50.html")
+
 @app.route("/index", methods = ["POST", "GET"])
 def index():
    return render_template("index.html")
