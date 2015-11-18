@@ -3,10 +3,6 @@ from mail import maildude
 app = Flask('__name__')
 app.config['SECRET_KEY'] = "Alex is great"
 
-@app.route("/VicsProDrivingSchool", methods= ["POST", "GET"])
-def vics():
-    return render_template("test.html")
-
 @app.route("/", methods = ["POST", "GET"])
 @app.route("/home", methods = ["POST", "GET"])
 def home():
@@ -20,7 +16,7 @@ def home():
     return render_template("home.html")
 
 @app.route("/google8788b8b7e1df6b50.html", methods =["POST","GET"])
-def goog():
+def goog()
     return render_template("google8788b8b7e1df6b50.html")
 
 @app.route("/index", methods = ["POST", "GET"])
